@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TxtContent index{% endblock %}
+
+{% block body %}
+    <h1>TxtContent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>CreatAt</th>
+                <th>UpdateAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for txt_content in txt_contents %}
+            <tr>
+                <td>{{ txt_content.id }}</td>
+                <td>{{ txt_content.content }}</td>
+                <td>{{ txt_content.creatAt ? txt_content.creatAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ txt_content.updateAt ? txt_content.updateAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('txt_content_show', {'id': txt_content.id}) }}">show</a>
+                    <a href="{{ path('txt_content_edit', {'id': txt_content.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('txt_content_new') }}">Create new</a>
+{% endblock %}

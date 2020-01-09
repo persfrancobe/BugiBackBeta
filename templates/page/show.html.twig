@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page{% endblock %}
+
+{% block body %}
+    <h1>Page</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ page.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ page.name }}</td>
+            </tr>
+            <tr>
+                <th>Ordby</th>
+                <td>{{ page.ordby }}</td>
+            </tr>
+            <tr>
+                <th>Visible</th>
+                <td>{{ page.visible ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ page.type }}</td>
+            </tr>
+            <tr>
+                <th>CreatAt</th>
+                <td>{{ page.creatAt ? page.creatAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdateAt</th>
+                <td>{{ page.updateAt ? page.updateAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('page_index') }}">back to list</a>
+
+    <a href="{{ path('page_edit', {'id': page.id}) }}">edit</a>
+
+    {{ include('page/_delete_form.html.twig') }}
+{% endblock %}
