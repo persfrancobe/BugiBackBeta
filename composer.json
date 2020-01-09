@@ -22,13 +22,18 @@
         "symfony/orm-pack": "*",
         "symfony/process": "5.0.*",
         "symfony/security-bundle": "5.0.*",
+        "symfony/security-core": "5.0.*",
+        "symfony/security-csrf": "5.0.*",
+        "symfony/security-guard": "5.0.*",
+        "symfony/security-http": "5.0.*",
         "symfony/serializer-pack": "*",
         "symfony/string": "5.0.*",
         "symfony/translation": "5.0.*",
         "symfony/twig-pack": "*",
         "symfony/validator": "5.0.*",
         "symfony/web-link": "5.0.*",
-        "symfony/yaml": "5.0.*"
+        "symfony/yaml": "5.0.*",
+        "friendsofsymfony/user-bundle": "dev-bugfix"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
@@ -81,5 +86,11 @@
             "allow-contrib": true,
             "require": "5.0.*"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jethrohicks/FOSUserBundle.git"
+        }
+    ]
 }
