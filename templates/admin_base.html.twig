@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}{% include 'admin/partials/_head.html.twig' %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}{% include 'admin/partials/_style.html.twig' %}{% endblock %}
+</head>
+<body>
+<header>
+    {% block header %}{% include 'admin/partials/_header.html.twig' %}{% endblock %}
+</header>
+<section>
+    <nav>{% block nav %}{{ render(controller('App\\Controller\\AdminController::nav')) }}{% endblock %}</nav>
+    {% block body %}{% endblock %}
+</section>
+<footer>
+    {% block footer %}{% include 'admin/partials/_footer.html.twig' %}{% endblock %}
+</footer>
+
+{% block javascripts %}{% include 'admin/partials/_javascripts.html.twig' %}{% endblock %}
+</body>
+</html>
